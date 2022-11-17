@@ -3,13 +3,11 @@ export const fetchProduct = () => {
 };
 
 export const fetchProductsList = async (selector) => {
-  if (selector !== undefined) {
-    try {
-      const response = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${selector}`);
-      const json = await response.json();
-      return json.results;
-    } catch (error) {
-      throw new Error('Termo de busca não informado');
-    }
+  if (selector === undefined) {
+    throw new Error('Termo de busca não informado');
+  } else {
+    const response = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${selector}`);
+    const json = await response.json();
+    return json.results;
   }
 };
