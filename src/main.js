@@ -5,7 +5,6 @@ import { createProductElement, createCartProductElement } from './helpers/shopFu
 import { saveCartID } from './helpers/cartFunctions';
 
 document.querySelector('.cep-button').addEventListener('click', searchCep);
-//
 const sectionItems = document.querySelector('.products');
 const sectionSaveCart = document.querySelector('.cart__products');
 
